@@ -1,4 +1,4 @@
-package br.com.entra21.kalil.main.classes;
+package br.com.entra21.kalil.main.aula01.classes;
 
 import java.util.Scanner;
 
