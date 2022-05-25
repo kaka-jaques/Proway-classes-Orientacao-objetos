@@ -3,7 +3,7 @@ package br.com.entra21.kalil.main;
 import java.util.Scanner;
 
 import br.com.entra21.kalil.main.aula01.classes.*;
-import br.com.entra21.kalil.main.aula02.herancas.Diretor;
+import br.com.entra21.kalil.main.aula02.herancas.*;
 
 public class Main {
 	
@@ -22,15 +22,33 @@ public class Main {
 			
 			op = sc.nextByte();
 			
+			switch(op) {
+			
+			case 0:
+				
+				System.out.println("Bye bye");
+				
+				break;
+			case 1:
+				
+				aprenderClassesObjetos();
+				
+				break;
+			case 2:
+				
+				aprenderHerancas();
+				
+				break;
+			default:
+				break;
+			
+			}
+			
 		}while(op != 0);
 	
 	}
 	
 	public static void aprenderClassesObjetos() {
-	
-		Diretor diretor1 = new Diretor();
-		
-		Diretor diretor2 = new Diretor();
 		
 		//PROFESSOR
 		
@@ -99,7 +117,17 @@ public class Main {
 		
 	public static void aprenderHerancas() {
 		
+		Funcionario funcionario1 = new Funcionario();
+		funcionario1.setIdade((byte)21);
+		funcionario1.setNome("Kalil");
+		funcionario1.setCargoAtual("Dev jr");
+		funcionario1.setSalario(20054f);
 		
+		Funcionario funcionario2 = new Funcionario("Kalil", "Fulstack Dev Jr.", (byte) 21, 20000f);
+		
+		System.out.println("Olá, meu nome é "+funcionario1.getNome()+", tenho "+funcionario1.getIdade()+" anos, trabalho com"+ funcionario1.getCargoAtual()+", recebo R$"+funcionario1.getSalario());
+		
+		Diretor diretor1 = new Diretor("Paulo", "123.345.235-54", "Programação", (byte) 80, (byte) 37);
 		
 	}
 	
