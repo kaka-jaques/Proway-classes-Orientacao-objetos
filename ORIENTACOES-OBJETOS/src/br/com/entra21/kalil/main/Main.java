@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import br.com.entra21.kalil.main.aula01.classes.*;
 import br.com.entra21.kalil.main.aula02.herancas.*;
+import br.com.entra21.kalil.main.aula03.poliformismo.*;
 
 public class Main {
 	
@@ -19,6 +20,7 @@ public class Main {
 			System.out.println("0 - Sair");
 			System.out.println("1 - Aprender classes");
 			System.out.println("2 - Aprender herança");
+			System.out.println("3 - Aprender Poliformismo");
 			
 			op = sc.nextByte();
 			
@@ -37,6 +39,11 @@ public class Main {
 			case 2:
 				
 				aprenderHerancas();
+				
+				break;
+			case 3:
+				
+				aprenderPolimorfismo();
 				
 				break;
 			default:
@@ -131,6 +138,22 @@ public class Main {
 		
 	}
 	
+	public static void aprenderPolimorfismo(){
+		
+		Atleta atleta = new Atleta();
+		Gamer gamer = new Gamer("coldzera", (byte) 40, 154, 35, "csgo", "1080p");
+		Velocista velocista = new Velocista();
+		Nadador nadador = new Nadador("Sérgio Michael", (byte) 39, 23, 40, "Piscína", "Sunga e Touca");
+
+		atleta.agradecerVitoria();
+		System.out.println("---------------");
+		gamer.agradecerVitoria();
+		System.out.println("---------------");
+		velocista.agradecerVitoria();
+		System.out.println("---------------");
+		nadador.agradecerVitoria();
+		
+	}
 	
 	
 }
