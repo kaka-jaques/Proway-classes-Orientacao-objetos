@@ -5,6 +5,8 @@ import java.util.Scanner;
 import br.com.entra21.kalil.main.aula01.classes.*;
 import br.com.entra21.kalil.main.aula02.herancas.*;
 import br.com.entra21.kalil.main.aula03.poliformismo.*;
+import br.com.entra21.kalil.main.aula04.conceitospoo.*;
+import br.com.entra21.kalil.main.aula05.interfaces.*;
 
 public class Main {
 	
@@ -18,9 +20,12 @@ public class Main {
 			
 			System.out.println("Selecione uma opção desejada:");
 			System.out.println("0 - Sair");
-			System.out.println("1 - Aprender classes");
-			System.out.println("2 - Aprender herança");
+			System.out.println("1 - Aprender Classes");
+			System.out.println("2 - Aprender Herança");
 			System.out.println("3 - Aprender Poliformismo");
+			System.out.println("4 - Aprender Conceito POO");
+			System.out.println("5 - Aprender Polimorfismo com Interface");
+			System.out.println("6 - Exercicios");
 			
 			op = sc.nextByte();
 			
@@ -46,7 +51,23 @@ public class Main {
 				aprenderPolimorfismo();
 				
 				break;
+			case 4:
+				
+				aprenderConceitosPOO();
+				
+				break;
+			case 5:
+				
+				aprenderPolimorfismoInterface();
+				
+				break;
+			case 6:
+				
+				exerciciosPOO();
+				
+				break;
 			default:
+				System.out.println("Presta atenção pateta!");
 				break;
 			
 			}
@@ -54,7 +75,7 @@ public class Main {
 		}while(op != 0);
 	
 	}
-	
+
 	public static void aprenderClassesObjetos() {
 		
 		//PROFESSOR
@@ -154,6 +175,50 @@ public class Main {
 		nadador.agradecerVitoria();
 		
 	}
+
+	private static void aprenderConceitosPOO() {
+		
+		//a classe ponto tem alta COESÃO pois ele é preciso nas suas responsabilidades
+		Ponto pontoAlto = new Ponto(30, 10000);
+		Ponto esquerdaBaixo = new Ponto(-20, -100);
+		
+		//A classe Reta é AGREGADA por Ponto que pode não estar inicializadas
+		//A associação de Reta e Ponto é de "um para muitos", respectivamente
+		Reta torta = new Reta();
+		Reta retaDiagonal = new Reta(pontoAlto, esquerdaBaixo);
+		
+		
+		
+	}
 	
+	private static void aprenderPolimorfismoInterface() {
+		
+		Humano kalil = new Humano();
+		kalil.setNome("Kalil");
+		kalil.apresentarSe();
+		kalil.alimentar("Pizza");
+		kalil.locomover();
+		kalil.comunicar("salve salve garela");
+		
+		Gato taehyung = new Gato("taehyung", new Pessoa("Naine", "", (byte) 22));
+		
+		Pato duck = new Pato();
+		duck.alimentar("milho");
+		duck.comunicar("quack");
+		duck.locomover();
+		
+		Planta umae = new Planta();
+		umae.alimentar("");
+		umae.comunicar("");
+		umae.locomover();
+		
+	}
+	
+	public static void exerciciosPOO() {
+		
+		Carro tesla = new Carro("Tesla", "X4", 13.4f);
+		System.out.println("Este carro é um "+tesla.getMarca()+", modelo "+tesla.getModelo()+", e faz uns "+tesla.abastecer(24f)+" Kilometros");
+		
+	}
 	
 }
