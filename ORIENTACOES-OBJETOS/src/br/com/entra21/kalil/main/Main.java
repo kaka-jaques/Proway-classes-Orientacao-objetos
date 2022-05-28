@@ -6,7 +6,8 @@ import br.com.entra21.kalil.main.aula01.classes.*;
 import br.com.entra21.kalil.main.aula02.herancas.*;
 import br.com.entra21.kalil.main.aula03.poliformismo.*;
 import br.com.entra21.kalil.main.aula04.conceitospoo.*;
-import br.com.entra21.kalil.main.aula05.interfaces.*;
+import br.com.entra21.kalil.main.aula04.interfaces.*;
+import br.com.entra21.kalil.main.aula05.revisao.Revisao;
 
 public class Main {
 	
@@ -14,7 +15,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		byte op;
+		byte opcao;
 		
 		do {
 			
@@ -26,10 +27,11 @@ public class Main {
 			System.out.println("4 - Aprender Conceito POO");
 			System.out.println("5 - Aprender Polimorfismo com Interface");
 			System.out.println("6 - Exercicios");
+			System.out.println("7 - Revisar POO");
 			
-			op = sc.nextByte();
+			opcao = sc.nextByte();
 			
-			switch(op) {
+			switch(opcao) {
 			
 			case 0:
 				
@@ -66,13 +68,18 @@ public class Main {
 				exerciciosPOO();
 				
 				break;
+			case 7:
+				
+				revisarPOO();
+				
+				break;
 			default:
 				System.out.println("Presta atenção pateta!");
 				break;
 			
 			}
 			
-		}while(op != 0);
+		}while(opcao != 0);
 	
 	}
 
@@ -218,6 +225,12 @@ public class Main {
 		
 		Carro tesla = new Carro("Tesla", "X4", 13.4f);
 		System.out.println("Este carro é um "+tesla.getMarca()+", modelo "+tesla.getModelo()+", e faz uns "+tesla.abastecer(24f)+" Kilometros");
+		
+	}
+	
+	private static void revisarPOO() {
+		
+		Revisao.revisar();
 		
 	}
 	

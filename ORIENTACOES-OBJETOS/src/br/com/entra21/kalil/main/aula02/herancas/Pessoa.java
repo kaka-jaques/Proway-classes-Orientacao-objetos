@@ -4,6 +4,7 @@ public class Pessoa {
 
 	private String nome;
 	private String cpf;
+	private String observacao;
 	private byte idade;
 	
 	public Pessoa() {
@@ -33,6 +34,14 @@ public class Pessoa {
 	}
 	public void setIdade(byte idade) {
 		this.idade = idade;
+	}
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
 	}
 	
 }

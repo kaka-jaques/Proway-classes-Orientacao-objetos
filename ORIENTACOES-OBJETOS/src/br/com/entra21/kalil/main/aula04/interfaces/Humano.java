@@ -1,4 +1,4 @@
-package br.com.entra21.kalil.main.aula05.interfaces;
+package br.com.entra21.kalil.main.aula04.interfaces;
 
 import br.com.entra21.kalil.main.aula02.herancas.Pessoa;
 
